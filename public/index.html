@@ -1,0 +1,388 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AstraNetix Solution Pvt. Ltd.</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css" />
+    <script src="main.js" defer></script>
+    <script src="https://unpkg.com/vanilla-tilt@1.7.0/dist/vanilla-tilt.min.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <style>
+      #bg-video {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+        opacity: 0.5;
+      }
+      .glass {
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 1rem;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(10px);
+      }
+      .glow:hover {
+        box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+      }
+      .service-card:hover {
+        transform: translateY(-5px);
+        transition: transform 0.3s ease-in-out;
+        box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+      }
+    </style>
+  </head>
+  <body class="text-white bg-black font-sans scroll-smooth">
+    <video autoplay muted loop id="bg-video">
+      <source src="assets/video.mp4" type="video/mp4" />
+    </video>
+
+    <!-- Dark Mode Toggle -->
+    <div class="fixed bottom-5 left-5 z-50">
+      <button onclick="document.body.classList.toggle('bg-black'); document.body.classList.toggle('bg-white'); document.body.classList.toggle('text-white'); document.body.classList.toggle('text-black');" class="bg-gray-800 text-white p-2 rounded-full shadow hover:bg-gray-700">
+        🌓
+      </button>
+    </div>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/919530073091" target="_blank" class="fixed bottom-5 right-5 bg-green-500 hover:bg-green-600 text-white p-3 rounded-full shadow-lg z-50">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16.24 11.51a4.25 4.25 0 00-6-6L9 5.76 5.76 9a4.25 4.25 0 006 6l1.41-1.41a1 1 0 011.41 0l1.66 1.66a1 1 0 010 1.41L12 21.24a9 9 0 109-9l-4.76-4.76a1 1 0 01-1.41 0z" />
+      </svg>
+    </a>
+
+    <!-- Header -->
+    <header class="text-center py-10">
+      <img src="assets/logo.png" alt="AstraNetix Logo" class="mx-auto h-20 animate-pulse" />
+      <h1 class="text-5xl font-extrabold mt-4 bg-gradient-to-r from-cyan-400 via-pink-500 to-purple-500 text-transparent bg-clip-text animate-fade-in">AstraNetix Solution Pvt. Ltd.</h1>
+      <p class="text-xl text-cyan-300 mt-2">Empowering IT. Enabling Trust.</p>
+    </header>
+
+    <!-- About Section -->
+    <section class="py-20 px-6 md:px-20 bg-black text-white" id="about">
+      <h2 class="text-4xl font-bold mb-8 text-center">💼 Who We Are</h2>
+      <p class="max-w-4xl mx-auto text-lg leading-relaxed">We are a team of certified engineers, network architects, and cloud specialists passionate about creating reliable and future-proof IT environments. Our work is rooted in a deep understanding of both legacy and next-gen technologies, allowing us to bridge gaps and deliver end-to-end solutions with precision.</p>
+      <h3 class="text-3xl font-bold mt-12 text-center">⚙️ What We Do Best</h3>
+      <ul class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto mt-8 list-disc list-inside text-lg">
+        <li>Deliver refurbished & new IT hardware to maximize performance and ROI</li>
+        <li>Design and implement enterprise network infrastructures — from startups to data centers</li>
+        <li>Deploy MikroTik solutions for ISPs and enterprises across India</li>
+        <li>Architect cloud-native and hybrid environments with seamless migration</li>
+        <li>Implement virtualization, server provisioning, and scalable backend systems</li>
+        <li>Provide robust cybersecurity, VPNs, firewalls, and compliance-ready network protection</li>
+        <li>Build beautiful, optimized, and secure web applications and websites</li>
+      </ul>
+      <div class="text-center mt-12">
+        <p class="text-2xl font-bold text-cyan-300">🌐 Our Vision</p>
+        <p class="mt-2 max-w-3xl mx-auto">To become the most trusted technology partner in India and beyond — where businesses rely on us to secure, scale, and strengthen their IT backbone.</p>
+        <p class="text-2xl font-bold mt-6 text-cyan-300">🚀 Our Mission</p>
+        <p class="mt-2 max-w-3xl mx-auto">To simplify IT infrastructure and deliver high-impact, reliable, and cost-effective solutions that drive business continuity and innovation.</p>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="py-20 px-6 md:px-20 bg-gray-950 text-white" id="services">
+      <h2 class="text-4xl font-bold text-center mb-10">🔧 Our Services</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+        <div class="glass p-6 rounded-xl text-center service-card" data-sr>
+          <h3 class="text-xl font-bold mb-3">Refurbished & New Hardware</h3>
+          <p>We provide performance-tested laptops, CPUs, servers, and networking equipment.</p>
+        </div>
+        <div class="glass p-6 rounded-xl text-center service-card" data-sr>
+          <h3 class="text-xl font-bold mb-3">Enterprise Networking</h3>
+          <p>Design & deployment for reliable, scalable business-grade networks.</p>
+        </div>
+        <div class="glass p-6 rounded-xl text-center service-card" data-sr>
+          <h3 class="text-xl font-bold mb-3">Cloud & Hybrid Infrastructure</h3>
+          <p>End-to-end cloud migration, hybrid cloud, disaster recovery, and automation.</p>
+        </div>
+        <div class="glass p-6 rounded-xl text-center service-card" data-sr>
+          <h3 class="text-xl font-bold mb-3">Data Center & Server Room Setup</h3>
+          <p>Structured cabling, rack design, power backup, cooling, and failover setup.</p>
+        </div>
+        <div class="glass p-6 rounded-xl text-center service-card" data-sr>
+          <h3 class="text-xl font-bold mb-3">MikroTik ISP Solutions</h3>
+          <p>Complete ISP deployment, routing, bandwidth shaping, and failover planning.</p>
+        </div>
+        <div class="glass p-6 rounded-xl text-center service-card" data-sr>
+          <h3 class="text-xl font-bold mb-3">Cybersecurity & VPN</h3>
+          <p>Network hardening, endpoint security, VPN tunnels, and firewall configuration.</p>
+        </div>
+        <div class="glass p-6 rounded-xl text-center service-card" data-sr>
+          <h3 class="text-xl font-bold mb-3">Web Development</h3>
+          <p>Responsive, secure, and SEO-friendly websites tailored to your business goals.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Upcoming Projects Section -->
+    <section class="py-20 px-6 md:px-20 bg-black text-white" id="upcoming-projects">
+      <h2 class="text-4xl font-bold text-center mb-6">🚀 Upcoming AI-Powered Solutions</h2>
+      <p class="text-center text-cyan-300 mb-12 max-w-3xl mx-auto text-lg">
+        Pioneering the future of IT automation with cutting-edge AI technologies. Get ready for revolutionary solutions that will transform how businesses manage SEO and network infrastructure.
+      </p>
+      
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-7xl mx-auto">
+        <!-- AstraPilot Card -->
+        <article class="project-card glass-enhanced p-8 rounded-2xl" data-sr>
+          <div class="project-header mb-6">
+            <div class="flex items-center mb-4">
+              <div class="w-12 h-12 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-lg flex items-center justify-center mr-4">
+                <span class="text-2xl font-bold text-white">AP</span>
+              </div>
+              <div>
+                <h3 class="text-2xl font-bold text-cyan-300">AstraPilot</h3>
+                <p class="text-gray-400">AI-Powered SEO Automation Tool</p>
+              </div>
+            </div>
+            <div class="status-badge inline-block px-3 py-1 bg-gradient-to-r from-orange-500 to-red-500 text-white text-sm rounded-full">
+              Coming Soon
+            </div>
+          </div>
+          
+          <p class="text-gray-300 mb-6 leading-relaxed">
+            Revolutionize your digital presence with intelligent SEO automation that maximizes online visibility, boosts search rankings, and optimizes content in real-time — all without manual effort.
+          </p>
+          
+          <div class="features-grid mb-6">
+            <h4 class="text-lg font-semibold text-white mb-4">Key Features:</h4>
+            <ul class="space-y-3">
+              <li class="flex items-start">
+                <span class="w-2 h-2 bg-cyan-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                <span class="text-gray-300">Real-time SEO auditing & AI-powered analytics</span>
+              </li>
+              <li class="flex items-start">
+                <span class="w-2 h-2 bg-cyan-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                <span class="text-gray-300">Automated keyword tracking & content optimization</span>
+              </li>
+              <li class="flex items-start">
+                <span class="w-2 h-2 bg-cyan-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                <span class="text-gray-300">AI-driven meta tags & schema markup generation</span>
+              </li>
+              <li class="flex items-start">
+                <span class="w-2 h-2 bg-cyan-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                <span class="text-gray-300">Competitor analysis with machine learning insights</span>
+              </li>
+              <li class="flex items-start">
+                <span class="w-2 h-2 bg-cyan-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                <span class="text-gray-300">Smart backlink recommendations & auto-link building</span>
+              </li>
+            </ul>
+          </div>
+          
+          <button class="project-cta w-full bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white py-3 px-6 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
+            Get Early Access
+          </button>
+        </article>
+
+        <!-- Astranetix BMS Card -->
+        <article class="project-card glass-enhanced p-8 rounded-2xl" data-sr>
+          <div class="project-header mb-6">
+            <div class="flex items-center mb-4">
+              <div class="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center mr-4">
+                <span class="text-2xl font-bold text-white">BMS</span>
+              </div>
+              <div>
+                <h3 class="text-2xl font-bold text-purple-300">Astranetix BMS</h3>
+                <p class="text-gray-400">AI-First ISP Management Platform</p>
+              </div>
+            </div>
+            <div class="status-badge inline-block px-3 py-1 bg-gradient-to-r from-orange-500 to-red-500 text-white text-sm rounded-full">
+              Coming Soon
+            </div>
+          </div>
+          
+          <p class="text-gray-300 mb-6 leading-relaxed">
+            Next-generation bandwidth and network management solution for ISPs and enterprises. Harness AI to automate complex networking tasks while ensuring top-tier performance and security.
+          </p>
+          
+          <div class="features-grid mb-6">
+            <h4 class="text-lg font-semibold text-white mb-4">Core Capabilities:</h4>
+            <ul class="space-y-3">
+              <li class="flex items-start">
+                <span class="w-2 h-2 bg-purple-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                <span class="text-gray-300">AI Turbo Engine for real-time bandwidth allocation</span>
+              </li>
+              <li class="flex items-start">
+                <span class="w-2 h-2 bg-purple-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                <span class="text-gray-300">MikroTik live dashboard with RADIUS integration</span>
+              </li>
+              <li class="flex items-start">
+                <span class="w-2 h-2 bg-purple-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                <span class="text-gray-300">TR-069 protocol support & remote device management</span>
+              </li>
+              <li class="flex items-start">
+                <span class="w-2 h-2 bg-purple-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                <span class="text-gray-300">OLT & ONU management for fiber infrastructure</span>
+              </li>
+              <li class="flex items-start">
+                <span class="w-2 h-2 bg-purple-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                <span class="text-gray-300">AI-based cyber fraud detection & threat alerts</span>
+              </li>
+              <li class="flex items-start">
+                <span class="w-2 h-2 bg-purple-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                <span class="text-gray-300">Integrated billing system with secure payment gateway</span>
+              </li>
+            </ul>
+          </div>
+          
+          <button class="project-cta w-full bg-gradient-to-r from-purple-500 to-pink-600 hover:from-purple-600 hover:to-pink-700 text-white py-3 px-6 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
+            Request Demo
+          </button>
+        </article>
+      </div>
+      
+      <div class="text-center mt-12">
+        <p class="text-gray-400 mb-4">Interested in early access or partnership opportunities?</p>
+        <a href="#contact" class="inline-block bg-gradient-to-r from-cyan-500 to-purple-500 hover:from-cyan-600 hover:to-purple-600 text-white py-3 px-8 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
+          Contact Our Innovation Team
+        </a>
+      </div>
+    </section>
+
+<!-- Section 1: Animated Globe Illustration -->
+<section class="py-20 px-6 md:px-20 bg-black text-white">
+  <div class="text-center">
+    <h2 class="text-4xl font-bold mb-6">🌍 Global Reach, Local Expertise</h2>
+    <div id="lottie-globe" class="mx-auto h-64 w-64"></div>
+    <p class="max-w-3xl mx-auto mt-6 text-lg">
+      AstraNetix leverages global technology standards while tailoring solutions to India's unique IT landscape. From metro cities to remote towns, we bridge the digital divide.
+    </p>
+  </div>
+</section>
+
+<!-- Section 2: Animated Server Infrastructure Illustration -->
+<section class="py-20 px-6 md:px-20 bg-gray-900 text-white">
+  <div class="text-center">
+    <h2 class="text-4xl font-bold mb-6">🖥️ Backbone of Your Business</h2>
+    <div id="lottie-server" class="mx-auto h-64 w-64"></div>
+    <p class="max-w-3xl mx-auto mt-6 text-lg">
+      We don’t just provide infrastructure—we build intelligent ecosystems that support high availability, security, and real-time insights. Scalable. Predictable. Secure.
+    </p>
+  </div>
+</section>
+
+
+         <!-- FAQ Section -->
+    <section class="py-20 px-6 md:px-20 bg-gray-900 text-white" id="faq">
+      <h2 class="text-4xl font-bold mb-10 text-center">❓ Frequently Asked Questions</h2>
+      <div class="max-w-4xl mx-auto space-y-6">
+        <details class="glass p-4 rounded-lg">
+          <summary class="font-semibold cursor-pointer">1. What services does AstraNetix provide?</summary>
+          <p class="mt-2">We offer IT hardware, network design, cybersecurity, cloud, data center setup, and development services.</p>
+        </details>
+        <details class="glass p-4 rounded-lg">
+          <summary class="font-semibold cursor-pointer">2. Do you provide refurbished systems?</summary>
+          <p class="mt-2">Yes, all products undergo strict quality checks and testing to ensure reliability and performance.</p>
+        </details>
+        <details class="glass p-4 rounded-lg">
+          <summary class="font-semibold cursor-pointer">3. Are you certified in MikroTik deployment?</summary>
+          <p class="mt-2">Yes, our engineers are MikroTik-certified and experienced in ISP and enterprise setups.</p>
+        </details>
+        <details class="glass p-4 rounded-lg">
+          <summary class="font-semibold cursor-pointer">4. What industries do you serve?</summary>
+          <p class="mt-2">We work with BFSI, healthcare, education, retail, IT, government, and more.</p>
+        </details>
+        <details class="glass p-4 rounded-lg">
+          <summary class="font-semibold cursor-pointer">5. Do you provide cloud and hybrid cloud solutions?</summary>
+          <p class="mt-2">Yes. We help migrate, configure, and secure your cloud infrastructure including hybrid setups.</p>
+        </details>
+        <details class="glass p-4 rounded-lg">
+          <summary class="font-semibold cursor-pointer">6. Is post-installation support available?</summary>
+          <p class="mt-2">Absolutely. We offer monitoring and maintenance plans for continued peace of mind.</p>
+        </details>
+        <details class="glass p-4 rounded-lg">
+          <summary class="font-semibold cursor-pointer">7. Can you secure our entire IT infrastructure?</summary>
+          <p class="mt-2">Yes, we implement cybersecurity best practices and compliance-driven protection strategies.</p>
+        </details>
+        <details class="glass p-4 rounded-lg">
+          <summary class="font-semibold cursor-pointer">8. Do you handle server and virtualization?</summary>
+          <p class="mt-2">Yes. We provide end-to-end backend setups including servers, virtual machines, and backups.</p>
+        </details>
+        <details class="glass p-4 rounded-lg">
+          <summary class="font-semibold cursor-pointer">9. What regions do you operate in?</summary>
+          <p class="mt-2">We serve all over India, including remote and metro regions, across industries.</p>
+        </details>
+        <details class="glass p-4 rounded-lg">
+          <summary class="font-semibold cursor-pointer">10. Can I get a custom quote?</summary>
+          <p class="mt-2">Yes, contact us via phone, email or our contact form for a personalized quote.</p>
+        </details>
+      </div>
+    </section>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+<section class="py-20 px-6 md:px-20 bg-black text-white" id="contact">
+  <h2 class="text-4xl font-bold text-center mb-10">📞 Contact Us</h2>
+
+  <form action="/api/contact" method="POST" class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto">
+    <input type="text" name="name" placeholder="Your Name" required
+           class="p-4 rounded bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-cyan-500" />
+
+    <input type="email" name="email" placeholder="Your Email" required
+           class="p-4 rounded bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-cyan-500" />
+
+    <textarea name="message" rows="5" placeholder="Your Message" required
+              class="p-4 rounded bg-gray-800 text-white md:col-span-2 focus:outline-none focus:ring-2 focus:ring-cyan-500"></textarea>
+
+    <button type="submit"
+            class="bg-cyan-500 hover:bg-cyan-600 text-white py-3 px-6 rounded font-semibold md:col-span-2 w-full text-center">
+      Send Message
+    </button>
+  </form>
+</section>
+
+
+      <div class="text-center mt-10">
+        <p>Email: <a href="mailto:info@astranetix.in" class="text-cyan-400 hover:underline">info@astranetix.in</a></p>
+        <p>Phone: <a href="tel:+919530073091" class="text-cyan-400 hover:underline">+91 9530073091</a></p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/company/astranetix-solutions/?viewAsMember=true" class="text-cyan-400 hover:underline">linkedin.com/company/astranetix-solutions</a></p>
+        <p>Twitter: <a href="https://twitter.com/xxxxx" class="text-cyan-400 hover:underline">twitter.com/xxxxx</a></p>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-10 text-center text-gray-400 text-sm bg-gray-900">
+      <p>&copy; 2025 AstraNetix Solutions All rights reserved.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+      ScrollReveal().reveal('[data-sr]', { duration: 1000, distance: '50px', origin: 'bottom', easing: 'ease-in-out' });
+      const swiper = new Swiper(".mySwiper", {
+        loop: true,
+        pagination: { el: ".swiper-pagination" },
+        autoplay: { delay: 5000 },
+      });
+    </script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.4/lottie.min.js"></script>
+<script>
+  // Lottie Animation - Globe
+  lottie.loadAnimation({
+    container: document.getElementById('lottie-globe'),
+    renderer: 'svg',
+    loop: true,
+    autoplay: true,
+    path: 'https://assets5.lottiefiles.com/packages/lf20_zrz5gk3g.json'
+  });
+
+  // Lottie Animation - Server
+  lottie.loadAnimation({
+    container: document.getElementById('lottie-server'),
+    renderer: 'svg',
+    loop: true,
+    autoplay: true,
+    path: 'https://assets4.lottiefiles.com/packages/lf20_jtbfg2nb.json'
+  });
+</script>
+  </body>
+</html>
+
