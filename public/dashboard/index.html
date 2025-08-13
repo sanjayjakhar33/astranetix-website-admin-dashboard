@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AstraNetix Admin Dashboard</title>
+  <link rel="stylesheet" href="/dashboard/dashboard-enhanced.css" />
+</head>
+<body>
+  <div class="dashboard-container">
+    <aside class="sidebar">
+      <h2>🔧 AstraNetix Solutions</h2>
+      <a href="/dashboard/">📊 Dashboard</a>
+      <a href="/dashboard/invoice.html">📝 Generate Invoice</a>
+      <a href="/dashboard/invoice-history.html">📚 Invoice History</a>
+      <a href="/dashboard/add-admin.html">➕ Add Admin</a>
+      <a href="#" onclick="logout()">🚪 Logout</a>
+    </aside>
+
+    <!-- 🧩 Main Content -->
+    <main class="main-content">
+      <h1>📊 Admin Overview</h1>
+
+      <!-- 📈 Stat Cards -->
+      <section class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-title">📨 Total Inquiries</div>
+          <div class="stat-value" id="totalInquiries">...</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-title">👤 Total Admins</div>
+          <div class="stat-value" id="totalAdmins">...</div>
+        </div>
+      </section>
+
+      <!-- 🚀 Upcoming Projects Dashboard -->
+      <section class="upcoming-projects-dashboard">
+        <h2>🚀 Upcoming AI-Powered Solutions</h2>
+        <p class="section-description">Monitor development progress and key metrics for our revolutionary AI products</p>
+        
+        <div class="projects-grid">
+          <!-- AstraPilot Project Card -->
+          <div class="project-dashboard-card" data-project="astrapilot">
+            <div class="project-card-header">
+              <div class="project-icon astrapilot-icon">
+                <span>AP</span>
+              </div>
+              <div class="project-info">
+                <h3>AstraPilot</h3>
+                <p>AI-Powered SEO Automation Tool</p>
+              </div>
+              <div class="project-status status-development">
+                <span class="status-dot"></span>
+                In Development
+              </div>
+            </div>
+            
+            <div class="project-metrics">
+              <div class="metric">
+                <span class="metric-label">Development Progress</span>
+                <div class="progress-bar">
+                  <div class="progress-fill" style="width: 75%"></div>
+                </div>
+                <span class="metric-value">75%</span>
+              </div>
+              
+              <div class="metric">
+                <span class="metric-label">Beta Testers</span>
+                <span class="metric-value">127</span>
+              </div>
+              
+              <div class="metric">
+                <span class="metric-label">Expected Launch</span>
+                <span class="metric-value">Q2 2024</span>
+              </div>
+            </div>
+            
+            <div class="project-actions">
+              <button class="action-btn primary" onclick="viewProjectDetails('astrapilot')">
+                View Details
+              </button>
+              <button class="action-btn secondary" onclick="toggleProjectExpansion(this)">
+                Expand
+              </button>
+            </div>
+            
+            <div class="project-expansion" style="display: none;">
+              <div class="expansion-content">
+                <h4>Recent Updates</h4>
+                <ul class="update-list">
+                  <li>✅ AI algorithm optimization completed</li>
+                  <li>🔄 Beta testing phase initiated</li>
+                  <li>📊 Performance metrics dashboard integrated</li>
+                  <li>🔐 Security audit in progress</li>
+                </ul>
+                
+                <h4>Key Features Status</h4>
+                <div class="feature-status-grid">
+                  <div class="feature-item completed">Real-time SEO Auditing</div>
+                  <div class="feature-item completed">Keyword Tracking</div>
+                  <div class="feature-item in-progress">AI Content Optimization</div>
+                  <div class="feature-item pending">Competitor Analysis</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Astranetix BMS Project Card -->
+          <div class="project-dashboard-card" data-project="bms">
+            <div class="project-card-header">
+              <div class="project-icon bms-icon">
+                <span>BMS</span>
+              </div>
+              <div class="project-info">
+                <h3>Astranetix BMS</h3>
+                <p>AI-First ISP Management Platform</p>
+              </div>
+              <div class="project-status status-planning">
+                <span class="status-dot"></span>
+                Planning Phase
+              </div>
+            </div>
+            
+            <div class="project-metrics">
+              <div class="metric">
+                <span class="metric-label">Development Progress</span>
+                <div class="progress-bar">
+                  <div class="progress-fill" style="width: 45%"></div>
+                </div>
+                <span class="metric-value">45%</span>
+              </div>
+              
+              <div class="metric">
+                <span class="metric-label">ISP Partners</span>
+                <span class="metric-value">23</span>
+              </div>
+              
+              <div class="metric">
+                <span class="metric-label">Expected Launch</span>
+                <span class="metric-value">Q3 2024</span>
+              </div>
+            </div>
+            
+            <div class="project-actions">
+              <button class="action-btn primary" onclick="viewProjectDetails('bms')">
+                View Details
+              </button>
+              <button class="action-btn secondary" onclick="toggleProjectExpansion(this)">
+                Expand
+              </button>
+            </div>
+            
+            <div class="project-expansion" style="display: none;">
+              <div class="expansion-content">
+                <h4>Recent Updates</h4>
+                <ul class="update-list">
+                  <li>📋 Technical specifications finalized</li>
+                  <li>🤝 Partnership agreements in progress</li>
+                  <li>🏗️ Core architecture design completed</li>
+                  <li>🔬 AI engine research phase</li>
+                </ul>
+                
+                <h4>Module Development Status</h4>
+                <div class="feature-status-grid">
+                  <div class="feature-item completed">User Management</div>
+                  <div class="feature-item in-progress">Bandwidth Monitoring</div>
+                  <div class="feature-item in-progress">AI Turbo Engine</div>
+                  <div class="feature-item pending">Fraud Detection</div>
+                  <div class="feature-item pending">Billing System</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Project Analytics Summary -->
+        <div class="project-analytics">
+          <h3>📈 Project Analytics</h3>
+          <div class="analytics-grid">
+            <div class="analytics-card">
+              <div class="analytics-icon">👥</div>
+              <div class="analytics-content">
+                <span class="analytics-value">150+</span>
+                <span class="analytics-label">Total Beta Users</span>
+              </div>
+            </div>
+            
+            <div class="analytics-card">
+              <div class="analytics-icon">🎯</div>
+              <div class="analytics-content">
+                <span class="analytics-value">60%</span>
+                <span class="analytics-label">Average Progress</span>
+              </div>
+            </div>
+            
+            <div class="analytics-card">
+              <div class="analytics-icon">⏱️</div>
+              <div class="analytics-content">
+                <span class="analytics-value">6 months</span>
+                <span class="analytics-label">Avg. Development Time</span>
+              </div>
+            </div>
+            
+            <div class="analytics-card">
+              <div class="analytics-icon">💰</div>
+              <div class="analytics-content">
+                <span class="analytics-value">$2.5M</span>
+                <span class="analytics-label">Projected Revenue</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 📨 Contact Submissions -->
+      <section>
+        <h2>📬 Contact Submissions</h2>
+        <div class="entries" id="entries">Loading...</div>
+      </section>
+    </main>
+  </div>
+
+  <!-- 📜 Scripts -->
+  <script>
+    const token = localStorage.getItem("token");
+    if (!token) window.location.href = "/dashboard/login.html";
+
+    // 🔢 Fetch Stats
+    fetch("/api/stats", {
+      headers: { Authorization: `Bearer ${token}` }
+    })
+    .then(res => res.json())
+    .then(data => {
+      document.getElementById("totalInquiries").innerText = data.inquiries || 0;
+      document.getElementById("totalAdmins").innerText = data.admins || 0;
+    });
+
+    // 📥 Fetch Entries
+    fetch("/api/contact/all", {
+      headers: { Authorization: `Bearer ${token}` }
+    })
+    .then(res => res.json())
+    .then(data => {
+      const container = document.getElementById("entries");
+      container.innerHTML = "";
+      if (!data.length) {
+        container.innerHTML = "<p>No entries found.</p>";
+        return;
+      }
+
+      data.forEach(entry => {
+        const date = new Date(entry.created_at).toLocaleString();
+        container.innerHTML += `
+          <div class="card">
+            <p><strong>Name:</strong> ${entry.name}</p>
+            <p><strong>Email:</strong> ${entry.email}</p>
+            <p><strong>Message:</strong> ${entry.message}</p>
+            <p class="timestamp">🕒 ${date}</p>
+          </div>
+        `;
+      });
+    })
+    .catch(() => {
+      document.getElementById("entries").innerHTML = '<p style="color:red;">Error loading data</p>';
+    });
+
+    function logout() {
+      localStorage.removeItem("token");
+      window.location.href = "/dashboard/login.html";
+    }
+  </script>
+</body>
+</html>
